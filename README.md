@@ -1,6 +1,8 @@
 # bob-plugin-akl-chatgpt-free-translate
 免费使用OpenAI ChatGPT;无需apiKey;无需账号密码;无需启动服务;
 
+(如果使用有问题可以给我提issue)
+
 bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网地址:https://bobtranslate.com/
 
 #### OpenAI ChatGPT免秘钥bob插件下载地址:[OpenAI chatgpt插件(免秘钥,免启动服务)](https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.0.5/bob-plugin-akl-chatgpt-free-translate_v0.0.5.bobplugin)
