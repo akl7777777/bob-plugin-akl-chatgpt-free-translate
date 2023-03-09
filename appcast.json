@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-deepl-free-translate",
   "versions": [
     {
+      "version": "0.0.3",
+      "desc": "Adjusting the default version",
+      "sha256": "5ecc4f060b282100bdd450f37a43f52357ed38141669c0a4e9ab8827aeedd089",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.0.3/bob-plugin-akl-chatgpt-free-translate_v0.0.3.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.2",
       "desc": "新增版本切换功能",
       "sha256": "d65c76926876d0970462c643e7f777226cf20605a81383ef2c00d6f6000b91e5",
