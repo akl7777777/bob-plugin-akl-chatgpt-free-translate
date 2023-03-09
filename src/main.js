@@ -1,6 +1,7 @@
 var config = require('./config.js');
 var utils = require('./utils.js');
 var hh = require('./hh.js');
+var ss = require('./ss.js');
 
 // 入参格式:
 // {
@@ -32,7 +33,14 @@ function translate(query, completion) {
         const translate_text = query.text || '';
         if (translate_text !== '') {
             try {
-                await hh.translate(query, source_lang, target_lang, translate_text, completion)
+                const server = $option.service;
+                if (server === 'alpha') {
+                    await hh.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'beta') {
+                    await ss.translate(query, source_lang, target_lang, translate_text, completion)
+                } else {
+
+                }
             } catch (e) {
                 Object.assign(e, {
                     _type: 'network',
