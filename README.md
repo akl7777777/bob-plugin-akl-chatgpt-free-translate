@@ -38,24 +38,11 @@ bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网�
 >[Bob的Postman接口调试插件](https://github.com/akl7777777/bob-plugin-akl-postman)
 
 
-**应大家要求,写了一版不依赖Bob内置环境,基于nodejs环境的代码,可以直接终端输入node deepl.js调用,需要的自行取用[deepl.js](https://github.com/akl7777777/bob-plugin-akl-deepl-free-translate/blob/main/node_js_implementation/deepl.js)**
-
-**没有bob的同学,我也有一个单独启动的deepl服务项目,效果跟这个是一样的,只不过要自己启动服务,自己调用接口;详情点[这里](https://github.com/akl7777777/deepl-free-translate-service)**
 
 使用截图如下
 
-<img width="588" alt="image" src="https://user-images.githubusercontent.com/84266551/220933928-52e72e71-8b05-47e8-81a4-323461f0e036.png">
+<img width="637" alt="image" src="https://user-images.githubusercontent.com/84266551/223911685-497b0e1d-57e6-40b9-803b-547c7ad99cfa.png">
 
-单词查询效果:
-
-<img width="621" alt="image" src="https://user-images.githubusercontent.com/84266551/223768247-b6041b44-33c6-4ffe-992b-f6ab47d15b62.png">
-
-
-
-
-~~----如果遇到同一个IP访问过于频繁,极小概率会报出too many request.此时网页版也会无法使用;但是不必担心,稍后重新尝试即可,一般等10分钟以上就可以.~~
-
-**此问题已优化**
 
 ### 开发不易,如果喜欢可以请作者喝一杯可乐,谢谢!
 
