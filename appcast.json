@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "0.0.6",
+      "desc": "新增翻译,文字润色,对话模式切换功能",
+      "sha256": "5a03f82e625bb6be86fbc92d0e15c37ee6ada38862b23ffe36bab8d28bfd6494",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.0.6/bob-plugin-akl-chatgpt-free-translate_v0.0.6.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "0.0.5",
       "desc": "bug fix",
       "sha256": "cfdd01fb9ad89973690e02bc53cd9573bcb9582e8a4c1c2dc09e5d25f5e193fc",
