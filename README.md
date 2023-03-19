@@ -1,6 +1,12 @@
 # bob-plugin-akl-chatgpt-free-translate
 **免费使用OpenAI ChatGPT;无需apiKey;无需账号密码;无需启动服务;**
 
+## 支持 普通聊天,翻译,文字润色三个功能切换
+
+<img width="730" alt="image" src="https://user-images.githubusercontent.com/84266551/226171072-bad6a24b-2979-418a-954e-a5aa2931ce90.png">
+
+
+
 (如果使用有问题可以给我提issue)
 
 bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网地址:https://bobtranslate.com/
@@ -8,6 +14,10 @@ bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网�
 #### OpenAI ChatGPT免秘钥bob插件下载地址:[OpenAI chatgpt插件(免秘钥,免启动服务)](https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.0.5/bob-plugin-akl-chatgpt-free-translate_v0.0.5.bobplugin)
 
 使用方法:双击安装,直接使用
+
+
+
+
 
 
 ### 友情链接==>ChatGPT免费桌面版客户端(支持Windows,macOS,Android)
@@ -51,7 +61,14 @@ bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网�
 
 使用截图如下
 
+普通聊天:
+
 <img width="637" alt="image" src="https://user-images.githubusercontent.com/84266551/223911685-497b0e1d-57e6-40b9-803b-547c7ad99cfa.png">
+
+文字润色:
+
+![image](https://user-images.githubusercontent.com/84266551/226171012-2822680a-e7f0-4d89-9766-61b8eefdbc69.png)
+
 
 
 ### 开发不易,如果喜欢可以请作者喝一杯可乐,谢谢!
