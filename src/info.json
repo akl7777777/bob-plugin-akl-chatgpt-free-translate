@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -22,6 +22,27 @@
         }
       ],
       "desc": "免秘钥免启动任何服务调用ChatGPT"
+    },
+    {
+      "identifier": "mode",
+      "type": "menu",
+      "title": "模式",
+      "defaultValue": "translate",
+      "menuValues": [
+        {
+          "title": "翻译模式",
+          "value": "translate"
+        },
+        {
+          "title": "文字润色",
+          "value": "polishing"
+        },
+        {
+          "title": "对话模式",
+          "value": "chat"
+        }
+      ],
+      "desc": "模式切换,支持翻译模式,文字润色,对话模式"
     },
     {
       "identifier": "service",

@@ -3,6 +3,13 @@ const {random, random_safe} = require("./e.js");
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
+        const mode = $option.mode;
+        // 如果是翻译模式,需要拼接
+        if (mode === 'translate') {
+            translate_text = `请将以下${fromName}内容翻译成${toName}：\n${translate_text}`
+        } else if (mode === 'polishing') {
+            translate_text = `请润色以下内容：\n${translate_text}`
+        }
         const resp = await $http.request({
             method: "POST",
             url: random_safe('aHR0cHM6Ly9jaGF0Z3B0LWFwaS5zaG4uaGsvdjEv'),
