@@ -2,6 +2,7 @@ var config = require('./config.js');
 var utils = require('./utils.js');
 var hh = require('./hh.js');
 var ss = require('./ss.js');
+var sc2e = require('./sc2e.js');
 
 // 入参格式:
 // {
@@ -39,7 +40,7 @@ function translate(query, completion) {
                 } else if (server === 'beta') {
                     await ss.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
-
+                    await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
                 }
             } catch (e) {
                 Object.assign(e, {
