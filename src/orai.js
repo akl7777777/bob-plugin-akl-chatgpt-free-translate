@@ -15,15 +15,15 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9jaGF0Zm9yYWku') + random_safe('bmV0L2FwaS9nZW5lcmF0ZQ' + '=='),
+            url: random_safe('aHR0cHM6Ly93d3cuam9zZWZhLndvcmxkL2FwaS9nZW5lcmF0ZQ=='),
             body: {
                 messages: A,
-                time: L,
-                pass: null,
-                sign: await generateSignature({
-                    t: L,
-                    m: (A && A[A.length - 1] && A[A.length - 1].content) ? A[A.length - 1].content : ""
-                })
+                // time: L,
+                // pass: null,
+                // sign: await generateSignature({
+                //     t: L,
+                //     m: (A && A[A.length - 1] && A[A.length - 1].content) ? A[A.length - 1].content : ""
+                // })
             },
             header: {
                 'Content-Type': 'application/json',
