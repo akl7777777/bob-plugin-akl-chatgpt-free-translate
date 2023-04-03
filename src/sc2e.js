@@ -15,7 +15,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cDovL2dwdC5leHAtOS5jb20vYXBpL2dlbmVyYXRl'),
+            url: random_safe('aHR0cHM6Ly9zdW1tZXJpbmcuaWN1L2FwaS9nZW5lcmF0ZQ=='),
             body: {
                 messages: A,
                 time: L,
