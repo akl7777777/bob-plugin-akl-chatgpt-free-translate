@@ -15,7 +15,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9uaWdodGZhbGw3LWNoYWdwdC1vbmxpbmUuaGYuc3BhY2UvYXBpL2dlbmVyYXRl'),
+            url: random_safe('aHR0cHM6Ly9hbXdhbm5hLmJ1enovYXBpL2dlbmVyYXRl'),
             body: {
                 messages: A,
                 time: L,
@@ -27,7 +27,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             },
             header: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/110.0.0.0 Safari/537.36'
+                'User-Agent': 'ChatWithAiRobot/5.3.0 (iPhone; iOS 16.3.1; Scale/3.00)'
             }
         });
         if (resp.data) {
