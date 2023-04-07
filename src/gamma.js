@@ -1,17 +1,26 @@
 const CryptoJS = require("crypto-js");
 const {random_safe} = require("./e.js");
+const {readFile,historyFileName} = require("./file");
 
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
-        const mode = $option.mode;
+        let mode = $option.mode;
+        const configValue = readFile();
+        if (configValue.mode) {
+            mode = configValue.mode;
+        }
+        let A = [{"role": "user", "content": translate_text}]
         // 如果是翻译模式,需要拼接
         if (mode === 'translate') {
             translate_text = `请将以下${source_lang}内容翻译成${target_lang}：\n${translate_text}`
+            A = [{"role": "user", "content": translate_text}]
         } else if (mode === 'polishing') {
             translate_text = `请润色以下内容：\n${translate_text}`
+            A = [{"role": "user", "content": translate_text}]
+        } else {
+            A = readFile(historyFileName).concat(A);
         }
-        const A = [{"role": "user", "content": translate_text}]
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",

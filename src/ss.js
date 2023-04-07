@@ -1,9 +1,14 @@
 const {random, random_safe} = require("./e.js");
+const {readFile} = require("./file");
 
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
-        const mode = $option.mode;
+        let mode = $option.mode;
+        const configValue = readFile();
+        if (configValue.mode) {
+            mode = configValue.mode;
+        }
         // 如果是翻译模式,需要拼接
         if (mode === 'translate') {
             translate_text = `请将以下${source_lang}内容翻译成${target_lang}：\n${translate_text}`
@@ -38,6 +43,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
                 },
             });
         }
+        return resp.data;
     } catch (e) {
         $log.error('接口请求错误 ==> ' + JSON.stringify(e))
         Object.assign(e, {

@@ -1,17 +1,27 @@
 const CryptoJS = require("crypto-js");
 const {random_safe} = require("./e.js");
+const {readFile,historyFileName} = require("./file");
+const file = require("./file");
 
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
-        const mode = $option.mode;
+        let mode = $option.mode;
+        const configValue = readFile();
+        if (configValue.mode) {
+            mode = configValue.mode;
+        }
+        let A = [{"role": "user", "content": translate_text}]
         // 如果是翻译模式,需要拼接
         if (mode === 'translate') {
             translate_text = `请将以下${source_lang}内容翻译成${target_lang}：\n${translate_text}`
+            A = [{"role": "user", "content": translate_text}]
         } else if (mode === 'polishing') {
             translate_text = `请润色以下内容：\n${translate_text}`
+            A = [{"role": "user", "content": translate_text}]
+        } else {
+            A = readFile(historyFileName).concat(A);
         }
-        const A = [{"role": "user", "content": translate_text}]
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
@@ -48,6 +58,18 @@ async function translate(query, source_lang, target_lang, translate_text, comple
                 },
             });
         }
+// 对话模式就保存
+        if (mode === 'conversation') {
+            A.push({
+                content: resp.data,
+                role: "assistant",
+            });
+            file.writeFile({
+                value: A,
+                fileName: file.historyFileName,
+            });
+        }
+        return resp.data;
     } catch (e) {
         $log.error('接口请求错误 ==> ' + JSON.stringify(e))
         Object.assign(e, {

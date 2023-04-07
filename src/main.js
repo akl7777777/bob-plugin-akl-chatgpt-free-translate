@@ -5,6 +5,9 @@ var ss = require('./ss.js');
 var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
 var gamma = require('./gamma.js');
+var file = require("./file");
+const {readFile} = require("./file");
+// var { historyFileName, readFile, writeFile } = require("./file");
 
 // 入参格式:
 // {
@@ -35,16 +38,50 @@ function translate(query, completion) {
         const target_lang = targetLanguage || 'EN';
         const translate_text = query.text || '';
         if (translate_text !== '') {
+            // 触发指令的结果
+            const directiveResult = utils.getDirectiveResult(translate_text);
+            if (directiveResult) {
+                completion({
+                    result: {
+                        from: query.detectFrom,
+                        to: query.detectTo,
+                        toParagraphs: directiveResult.split('\n'),
+                    },
+                });
+
+                return;
+            }
+
+
+            // 获取对话结果
+            let chatResult = ''
+
             try {
                 const server = $option.service;
                 if (server === 'alpha') {
-                    await hh.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await hh.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'beta') {
-                    await orai.translate(query, source_lang, target_lang, translate_text, completion)
-                }  else if (server === 'gamma') {
-                    await gamma.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await orai.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'gamma') {
+                    chatResult = await gamma.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
-                    await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
+                }
+                let mode = $option.mode;
+                const configValue = readFile();
+                if (configValue.mode) {
+                    mode = configValue.mode;
+                }
+                // 对话模式就保存
+                if (mode === 'conversation') {
+                    message.push({
+                        content: chatResult,
+                        role: "assistant",
+                    });
+                    file.writeFile({
+                        value: message,
+                        fileName: file.historyFileName,
+                    });
                 }
             } catch (e) {
                 Object.assign(e, {
