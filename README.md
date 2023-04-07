@@ -5,6 +5,10 @@
 
 <img width="730" alt="image" src="https://user-images.githubusercontent.com/84266551/226171072-bad6a24b-2979-418a-954e-a5aa2931ce90.png">
 
+同时也支持指令切换
+
+![iShot_2023-04-07_17 32 07](https://user-images.githubusercontent.com/84266551/230584980-cf88c42f-2c49-4cd7-bbec-f19d2bb60ec1.gif)
+
 
 
 (如果使用有问题可以给我提issue)
