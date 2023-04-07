@@ -11,7 +11,7 @@
 
 bob插件主要为bob用户开发,bob是一款macOS上的翻译软件,bob官网地址:https://bobtranslate.com/
 
-#### OpenAI ChatGPT免秘钥bob插件下载地址:[OpenAI chatgpt插件(免秘钥,免启动服务)](https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.1.7/bob-plugin-akl-chatgpt-free-translate_v0.1.7.bobplugin)
+#### OpenAI ChatGPT免秘钥bob插件下载地址:[OpenAI chatgpt插件(免秘钥,免启动服务)](https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v0.1.9/bob-plugin-akl-chatgpt-free-translate_v0.1.9.bobplugin)
 
 使用方法:双击安装,直接使用
 
