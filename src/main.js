@@ -4,6 +4,7 @@ var hh = require('./hh.js');
 var ss = require('./ss.js');
 var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
+var gamma = require('./gamma.js');
 
 // 入参格式:
 // {
@@ -40,6 +41,8 @@ function translate(query, completion) {
                     await hh.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'beta') {
                     await orai.translate(query, source_lang, target_lang, translate_text, completion)
+                }  else if (server === 'gamma') {
+                    await gamma.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
                     await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
                 }
