@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "1.0.1",
+      "desc": "修复大量封禁问题",
+      "sha256": "e4aee959253877dd115dfbecc1308db0413c38f95fd43674ed1af2a918641198",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v1.0.1/bob-plugin-akl-chatgpt-free-translate_v1.0.1.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "1.0.0",
       "desc": "重构,增加指令切换功能",
       "sha256": "362bc4f6b48c9e64be3fcf20fc3b0a8fe409e7aacef551741e260335822c116a",
