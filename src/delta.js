@@ -25,10 +25,15 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9haS5tZW5neGlucy5jbi9hcGkvZ2VuZXJhdGU='),
+            url: random_safe('aHR0cHM6Ly9hbXdhbm5hLmJ1enovYXBpL2dlbmVyYXRl'),
             body: {
                 messages: A,
-                "config":{"temperature":0.6,"top_p":1}
+                time: L,
+                pass: null,
+                sign: await generateSignature({
+                    t: L,
+                    m: (A && A[A.length - 1] && A[A.length - 1].content) ? A[A.length - 1].content : ""
+                })
             },
             header: {
                 'Content-Type': 'application/json',
