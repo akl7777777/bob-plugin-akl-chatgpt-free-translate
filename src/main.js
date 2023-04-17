@@ -5,6 +5,7 @@ var ss = require('./ss.js');
 var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
 var gamma = require('./gamma.js');
+var delta = require('./delta.js');
 var file = require("./file");
 const {readFile} = require("./file");
 // var { historyFileName, readFile, writeFile } = require("./file");
@@ -64,6 +65,8 @@ function translate(query, completion) {
                     chatResult = await orai.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'gamma') {
                     chatResult = await gamma.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'delta') {
+                    chatResult = await delta.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
                     chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
                 }
