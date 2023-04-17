@@ -26,7 +26,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const resp = await $http.request({
             method: "POST",
             // url: random_safe('aHR0cHM6Ly9haS5tZW5neGlucy5jbi9hcGkvZ2VuZXJhdGU='),
-            url: random_safe('aHR0cHM6Ly93d3cueGlhb3l1Z3B0LmFydC9hcGkvZ2VuZXJhdGU='),
+            url: random_safe('aHR0cHM6Ly9jaGF0LnNtYnJuZy5pZC9hcGkvZ2VuZXJhdGU='),
             // body: {
             //     messages: A,
             //     "config":{"temperature":0.6,"top_p":1}
