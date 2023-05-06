@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "1.1.1",
+      "desc": "Merge remote-tracking branch 'origin/main'",
+      "sha256": "99a7aa9058808b86ac229d622a718cb5840281604432e2b76dcbda5d6f129827",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v1.1.1/bob-plugin-akl-chatgpt-free-translate_v1.1.1.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "1.1.0",
       "desc": "修正图标,新增正式版和正式版(备用)切换功能",
       "sha256": "3723d7e8995a3d57b594d99612c1349604ef5cb8d7ee9cc92d3b201e9c26f6cb",
