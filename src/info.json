@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -40,9 +40,20 @@
         {
           "title": "对话模式",
           "value": "chat"
+        },
+        {
+          "title": "自定义prompt",
+          "value": "custom_prompt"
         }
       ],
       "desc": "模式切换,支持翻译模式,文字润色,对话模式"
+    },
+    {
+      "identifier": "prompt",
+      "type": "text",
+      "defaultValue": "",
+      "title": "自定义prompt",
+      "desc": "模式选择自定义prompt时填写,GPT会按照你指定的prompt进行回复"
     },
     {
       "identifier": "service",

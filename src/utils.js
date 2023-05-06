@@ -17,6 +17,8 @@ function getDirectiveResult(text) {
                 return "当前处于对话模式，有什么可以帮助你的呢？";
             } else if (configValue.mode === "polishing") {
                 return "当前处于文字润色模式，有什么可以帮助你的呢？";
+            } else if (configValue.mode === "custom_prompt") {
+                return "当前处于自定义prompt模式，有什么可以帮助你的呢？";
             } else {
                 return "当前处于翻译模式，我支持很多种语言翻译哦~";
             }
@@ -30,6 +32,9 @@ function getDirectiveResult(text) {
             } else if (configValue.mode === "translate") {
                 configValue.mode = "polishing";
                 message = "已切换到润色文字模式！";
+            } else if (configValue.mode === "polishing") {
+                configValue.mode = "custom_prompt";
+                message = "已切换到自定义prompt模式！";
             } else {
                 configValue.mode = "conversation";
                 message = "已切换到对话模式！";

@@ -1,12 +1,13 @@
 const CryptoJS = require("crypto-js");
 const {random_safe} = require("./e.js");
-const {readFile,historyFileName} = require("./file");
+const {readFile, historyFileName} = require("./file");
 const file = require("./file");
 
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
+        let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {
             mode = configValue.mode;
@@ -18,6 +19,9 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             A = [{"role": "user", "content": translate_text}]
         } else if (mode === 'polishing') {
             translate_text = `请润色以下内容：\n${translate_text}`
+            A = [{"role": "user", "content": translate_text}]
+        } else if (mode === 'custom_prompt') {
+            translate_text = `${prompt}\n${translate_text}`
             A = [{"role": "user", "content": translate_text}]
         } else {
             A = readFile(historyFileName).concat(A);

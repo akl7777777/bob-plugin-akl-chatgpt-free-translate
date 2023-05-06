@@ -5,6 +5,7 @@ const {readFile} = require("./file");
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
+        let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {
             mode = configValue.mode;
@@ -12,6 +13,8 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         // 如果是翻译模式,需要拼接
         if (mode === 'translate') {
             translate_text = `请将以下${source_lang}内容翻译成${target_lang}：\n${translate_text}`
+        } else if (mode === 'custom_prompt') {
+            translate_text = `${prompt}\n${translate_text}`
         } else if (mode === 'polishing') {
             translate_text = `请润色以下内容：\n${translate_text}`
         }
