@@ -68,8 +68,10 @@ function translate(query, completion) {
                     chatResult = await gamma.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'delta') {
                     chatResult = await delta.translate(query, source_lang, target_lang, translate_text, completion)
-                } else {
+                } else if (server === 'default-back') {
                     chatResult = await of.translate(query, source_lang, target_lang, translate_text, completion)
+                } else {
+                    chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
                 }
                 let mode = $option.mode;
                 const configValue = readFile();

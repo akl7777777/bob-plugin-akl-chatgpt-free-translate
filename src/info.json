@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -53,6 +53,10 @@
         {
           "title": "正式版",
           "value": "default"
+        },
+        {
+          "title": "正式版(备用)",
+          "value": "default-back"
         },
         {
           "title": "Alpha版本",
