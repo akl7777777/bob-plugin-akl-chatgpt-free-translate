@@ -4,6 +4,7 @@ var hh = require('./hh.js');
 var ss = require('./ss.js');
 var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
+var cha = require('./cha.js');
 var gamma = require('./gamma.js');
 var delta = require('./delta.js');
 var of = require('./of.js');
@@ -71,7 +72,7 @@ function translate(query, completion) {
                 } else if (server === 'default-back') {
                     chatResult = await of.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
-                    chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
                 }
                 let mode = $option.mode;
                 const configValue = readFile();
