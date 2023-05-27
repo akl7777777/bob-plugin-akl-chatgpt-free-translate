@@ -5,6 +5,7 @@ var ss = require('./ss.js');
 var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
 var cha = require('./cha.js');
+var notag = require('./notag.js');
 var d8888 = require('./8888.js');
 var gamma = require('./gamma.js');
 var delta = require('./delta.js');
@@ -74,8 +75,10 @@ function translate(query, completion) {
                     chatResult = await of.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back2') {
                     chatResult = await d8888.translate(query, source_lang, target_lang, translate_text, completion)
-                } else {
+                } else if (server === 'oversea-1') {
                     chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
+                } else {
+                    chatResult = await notag.translate(query, source_lang, target_lang, translate_text, completion)
                 }
                 let mode = $option.mode;
                 const configValue = readFile();

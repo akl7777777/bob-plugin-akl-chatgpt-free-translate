@@ -3,7 +3,6 @@ const {random_safe} = require("./e.js");
 const {readFile,historyFileName} = require("./file");
 const file = require("./file");
 
-// 已经被墙,海外可访问
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
@@ -29,7 +28,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly93d3cuY2hhemhlbmd3YW5nLmNvbS9hcGkvZ2VuZXJhdGU='),
+            url: random_safe('aHR0cDovL3d3dy5ub3RhZy5jbi9hcGkvZ2VuZXJhdGU='),
             body: {
                 messages: A,
                 time: L,
@@ -41,7 +40,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             },
             header: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'ChatWithAiRobot/5.3.0 (iPhone; iOS 16.3.1; Scale/3.00)'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
             }
         });
         if (resp.data) {
