@@ -63,7 +63,9 @@ function translate(query, completion) {
 
             try {
                 const server = $option.service;
-                if (server === 'alpha') {
+                if (server === 'api_key_1'){
+                    chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'alpha') {
                     chatResult = await hh.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'beta') {
                     chatResult = await orai.translate(query, source_lang, target_lang, translate_text, completion)

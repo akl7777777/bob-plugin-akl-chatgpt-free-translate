@@ -6,6 +6,7 @@ const file = require("./file");
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
+        let api_key = $option.api_key;
         let mode = $option.mode;
         let prompt = $option.prompt;
         const configValue = readFile();
@@ -30,33 +31,35 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const resp = await $http.request({
             method: "POST",
             url: random_safe('aHR0cHM6Ly9haS5tZW5neGlucy5jbi9hcGkvZ2VuZXJhdGU='),
-            // url: random_safe('aHR0cHM6Ly9jaGF0LnNtYnJuZy5pZC9hcGkvZ2VuZXJhdGU='),
             body: {
                 messages: A,
+                apiKey:api_key,
                 "config":{"temperature":0.6,"top_p":1}
             },
-            // body: {
-            //     messages: A,
-            //     time: L,
-            //     pass: null,
-            //     sign: await generateSignature({
-            //         t: L,
-            //         m: (A && A[A.length - 1] && A[A.length - 1].content) ? A[A.length - 1].content : ""
-            //     })
-            // },
             header: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'ChatWithAiRobot/5.3.0 (iPhone; iOS 16.3.1; Scale/3.00)'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
             }
         });
         if (resp.data) {
-            completion({
-                result: {
-                    from: query.detectFrom,
-                    to: query.detectTo,
-                    toParagraphs: resp.data.split('\n'),
-                },
-            });
+            if (resp.data.error){
+                completion({
+                    result: {
+                        from: query.detectFrom,
+                        to: query.detectTo,
+                        toParagraphs: JSON.stringify(resp.data).split('\n'),
+                    },
+                });
+            }else {
+                completion({
+                    result: {
+                        from: query.detectFrom,
+                        to: query.detectTo,
+                        toParagraphs: resp.data.split('\n'),
+                    },
+                });
+            }
+
         } else {
             const errMsg = resp.data ? JSON.stringify(resp.data) : '请求翻译接口失败,请检查网络'
             completion({
@@ -81,6 +84,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         return resp.data;
     } catch (e) {
         $log.error('接口请求错误 ==> ' + JSON.stringify(e))
+        $log.error(e)
         Object.assign(e, {
             _type: 'network',
             _message: '接口请求错误 - ' + JSON.stringify(e),
