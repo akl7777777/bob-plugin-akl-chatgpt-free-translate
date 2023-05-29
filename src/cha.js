@@ -3,7 +3,7 @@ const {random_safe} = require("./e.js");
 const {readFile,historyFileName} = require("./file");
 const file = require("./file");
 
-
+// 已经被墙,海外可访问
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
