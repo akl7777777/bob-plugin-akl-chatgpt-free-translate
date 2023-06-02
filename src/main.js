@@ -7,6 +7,7 @@ var sc2e = require('./sc2e.js');
 var cha = require('./cha.js');
 var notag = require('./notag.js');
 var space = require('./space.js');
+var space1 = require('./space1.js');
 var d8888 = require('./8888.js');
 var gamma = require('./gamma.js');
 var delta = require('./delta.js');
@@ -75,7 +76,7 @@ function translate(query, completion) {
                 } else if (server === 'delta') {
                     chatResult = await delta.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back1') {
-                    chatResult = await of.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await space1.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back2') {
                     chatResult = await d8888.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back3') {
