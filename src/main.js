@@ -6,6 +6,7 @@ var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
 var cha = require('./cha.js');
 var notag = require('./notag.js');
+var dw = require('./dw.js');
 var space = require('./space.js');
 var space1 = require('./space1.js');
 var d8888 = require('./8888.js');
@@ -85,7 +86,7 @@ function translate(query, completion) {
                 } else if (server === 'oversea-1') {
                     chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
-                    chatResult = await space.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await dw.translate(query, source_lang, target_lang, translate_text, completion)
                 }
                 let mode = $option.mode;
                 const configValue = readFile();
