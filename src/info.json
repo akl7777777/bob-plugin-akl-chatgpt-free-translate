@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -63,13 +63,66 @@
       "desc": "支持填写自己的key,记得下面线路选择填key的线路"
     },
     {
+      "identifier": "model",
+      "type": "menu",
+      "title": "模型",
+      "defaultValue": "gpt-3.5-turbo",
+      "menuValues": [
+        {
+          "title": "gpt-4",
+          "value": "gpt-4"
+        },
+        {
+          "title": "gpt-4-0314",
+          "value": "gpt-4-0314"
+        },
+        {
+          "title": "gpt-4-0613",
+          "value": "gpt-4-0613"
+        },
+        {
+          "title": "gpt-4-32k",
+          "value": "gpt-4-32k"
+        },
+        {
+          "title": "gpt-4-32k-0314",
+          "value": "gpt-4-32k-0314"
+        },
+        {
+          "title": "gpt-4-32k-0613",
+          "value": "gpt-4-32k-0613"
+        },
+        {
+          "title": "gpt-3.5-turbo",
+          "value": "gpt-3.5-turbo"
+        },
+        {
+          "title": "gpt-3.5-turbo-0301",
+          "value": "gpt-3.5-turbo-0301"
+        },
+        {
+          "title": "gpt-3.5-turbo-0613",
+          "value": "gpt-3.5-turbo-0613"
+        },
+        {
+          "title": "gpt-3.5-turbo-16k",
+          "value": "gpt-3.5-turbo-16k"
+        },
+        {
+          "title": "gpt-3.5-turbo-16k-0613",
+          "value": "gpt-3.5-turbo-16k-0613"
+        }
+      ],
+      "desc": "版本切换(默认正式版无特殊情况不用修改)"
+    },
+    {
       "identifier": "service",
       "type": "menu",
       "title": "版本",
       "defaultValue": "default",
       "menuValues": [
         {
-          "title": "自己填key线路1(关掉梯子)",
+          "title": "自己填key反代线路1",
           "value": "api_key_1"
         },
         {

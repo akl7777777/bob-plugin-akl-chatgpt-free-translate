@@ -8,6 +8,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
     try {
         let api_key = $option.api_key;
         let mode = $option.mode;
+        let model = $option.model;
         let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {
@@ -30,13 +31,15 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9haS5tZW5neGlucy5jbi9hcGkvZ2VuZXJhdGU='),
+            url: random_safe('aHR0cHM6Ly9haS5mYWtlb3Blbi5jb20vdjEvY2hhdC9jb21wbGV0aW9ucw=='),
             body: {
                 messages: A,
-                apiKey:api_key,
-                "config":{"temperature":0.6,"top_p":1}
+                model:model,
+                "temperature":1,
+                "presence_penalty":0
             },
             header: {
+                'authorization' : 'Bearer ' + api_key,
                 'Content-Type': 'application/json',
                 'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
             }
@@ -55,7 +58,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
                     result: {
                         from: query.detectFrom,
                         to: query.detectTo,
-                        toParagraphs: resp.data.split('\n'),
+                        toParagraphs: resp.data.choices[0].message.content.split('\n'),
                     },
                 });
             }
