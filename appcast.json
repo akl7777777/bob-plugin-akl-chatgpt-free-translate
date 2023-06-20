@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "1.2.3",
+      "desc": "修复备用1",
+      "sha256": "c04539d62434ba9d2e2d3102f87daabec8a5ff610d3e2a4f19d84a549fc6991f",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v1.2.3/bob-plugin-akl-chatgpt-free-translate_v1.2.3.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "1.2.2",
       "desc": "增加自己填key的反代线路对gpt-3.5-turbo-16k-0613,gpt-3.5-turbo-16k,gpt-4-32k-0314的支持",
       "sha256": "b6b4632227f3998485fa0d64dd91ba8b81beaa62c9d30473bd6413a2c3ffe0ad",
