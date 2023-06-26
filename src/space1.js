@@ -90,7 +90,7 @@ async function digestMessage(r) {
 
 async function generateSignature(r) {
     const {t: e, m: t} = r;
-    const n = 'do_not_do_thi';
+    const n = 'd_not_231so_thi';
     const a = `${e}:${t}:${n}`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
