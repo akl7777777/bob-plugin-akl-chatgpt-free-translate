@@ -6,6 +6,7 @@ var orai = require('./orai.js');
 var sc2e = require('./sc2e.js');
 var cha = require('./cha.js');
 var notag = require('./notag.js');
+var aifree = require('./aifree.js');
 var dw = require('./dw.js');
 var space = require('./space.js');
 var space1 = require('./space1.js');
@@ -83,6 +84,8 @@ function translate(query, completion) {
                 } else if (server === 'default-back3') {
                     // 限流了,每分钟3次
                     chatResult = await notag.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'default-back5') {
+                    chatResult = await aifree.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'oversea-1') {
                     chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
