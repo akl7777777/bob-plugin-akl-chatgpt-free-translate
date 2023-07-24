@@ -7,6 +7,7 @@ const file = require("./file");
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let api_key = $option.api_key;
+        let url = $option.url;
         let mode = $option.mode;
         let model = $option.model;
         let prompt = $option.prompt;
@@ -31,7 +32,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9haS5mYWtlb3Blbi5jb20vdjEvY2hhdC9jb21wbGV0aW9ucw=='),
+            url: url || random_safe('aHR0cHM6Ly9haS5mYWtlb3Blbi5jb20vdjEvY2hhdC9jb21wbGV0aW9ucw=='),
             body: {
                 messages: A,
                 model:model,
