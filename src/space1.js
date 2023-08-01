@@ -28,7 +28,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9nLmZyZWUtY2hhdC5hc2lhL2FwaS9nZW5lcmF0ZQ=='),
+            url: random_safe('aHR0cHM6Ly9lMS5mcmVlLWNoYXQuYXNpYS9hcGkvZ2VuZXJhdGU='),
             body: {
                 messages: A,
                 time: L,
@@ -90,7 +90,7 @@ async function digestMessage(r) {
 
 async function generateSignature(r) {
     const {t: e, m: t} = r;
-    const n = 'please contact me with kilo.meter@foxmail.com, thanks!';
+    const n = {}.PUBLIC_SECRET_KEY;
     const a = `${e}:${t}:${n}`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
