@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.0.0",
+      "desc": "全面升级对自定义api的支持和流式输出的支持",
+      "sha256": "ea95e8ef83476f5ee4ebc813c61e6d0e273765750f166f6c0f50facc9b48519e",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.0.0/bob-plugin-akl-chatgpt-free-translate_v2.0.0.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "1.3.5",
       "desc": "修复备用1",
       "sha256": "67602f3b670ee58ab7af1b19add1f3e1d0813f4d205ac2d039d2e3ba4779777a",
