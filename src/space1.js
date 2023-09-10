@@ -91,7 +91,7 @@ async function digestMessage(r) {
 async function generateSignature(r) {
     const {t: e, m: t} = r;
     const n = {}.PUBLIC_SECRET_KEY;
-    const a = `${e}:${t}:${n}`;
+    const a = `${e}:${t}:please use https://forward.free-chat.asia/v1/chat/completion for free. Don't steal my money, thank you! Docs at https://forward.free-chat.asia/redoc`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
     return rs;
