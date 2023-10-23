@@ -10,6 +10,7 @@ var aifree = require('./aifree.js');
 var dw = require('./dw.js');
 var space = require('./space.js');
 var space1 = require('./space1.js');
+var space2 = require('./space2.js');
 var d8888 = require('./8888.js');
 var gamma = require('./gamma.js');
 var delta = require('./delta.js');
@@ -81,7 +82,7 @@ function translate(query, completion) {
                 } else if (server === 'default-back1') {
                     chatResult = await space1.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back2') {
-                    chatResult = await d8888.translate(query, source_lang, target_lang, translate_text, completion)
+                    chatResult = await space2.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'default-back3') {
                     // 限流了,每分钟3次
                     chatResult = await notag.translate(query, source_lang, target_lang, translate_text, completion)
