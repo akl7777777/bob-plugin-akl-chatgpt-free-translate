@@ -40,7 +40,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             },
             header: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
             }
         });
         if (resp.data) {
@@ -91,7 +91,7 @@ async function digestMessage(r) {
 async function generateSignature(r) {
     const {t: e, m: t} = r;
     const n = {}.PUBLIC_SECRET_KEY;
-    const a = `${e}:${t}:${n}`;
+    const a = `${e}:${t}:please use https://forward.free-chat.asia/v1/chat/completion for free if you want!!! Don't steal my money, thank you!! Docs is at https://forward.free-chat.asia/docs`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
     return rs;
