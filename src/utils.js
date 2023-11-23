@@ -1,5 +1,5 @@
 var config = require('./config.js');
-var {configFileName, readFile, writeFile, deleteFile} = require("./file");
+var {configFileName, readFile, writeFile, deleteFile,deleteAllFile} = require("./file");
 
 const langMap = new Map(config.supportedLanguages);
 const langMapReverse = new Map(config.supportedLanguages.map(([standardLang, lang]) => [lang, standardLang]));
@@ -47,6 +47,11 @@ function getDirectiveResult(text) {
             deleteFile();
 
             return "已清除对话记录，你可以继续聊天。";
+        case "#重置":
+        case "#reset":
+        case "#Reset":
+            deleteAllFile();
+            return "已重置所有设置，你可以继续聊天。";
     }
 
     writeFile({

@@ -30,9 +30,14 @@ function writeFile({ value, fileName = configFileName }) {
 function deleteFile(fileName = historyFileName) {
     $file.delete(getFilePath(fileName));
 }
+function deleteAllFile() {
+    $file.delete(getFilePath(configFileName));
+    $file.delete(getFilePath(historyFileName));
+}
 
 exports.configFileName = configFileName;
 exports.historyFileName = historyFileName;
 exports.readFile = readFile;
 exports.writeFile = writeFile;
 exports.deleteFile = deleteFile;
+exports.deleteAllFile = deleteAllFile;
