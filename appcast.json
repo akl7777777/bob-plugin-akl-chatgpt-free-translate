@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.0.9",
+      "desc": "新增功能点:#reset 重置所有设置",
+      "sha256": "95be3cba2d03eec66158857bde8aa06050fbfc4762f0097afe2025a65d51fcc6",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.0.9/bob-plugin-akl-chatgpt-free-translate_v2.0.9.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "2.0.8",
       "desc": "修复备用1",
       "sha256": "00ede0217bc7d44749294b3a714513c6f60de042917fe478802f9ed77d6cc046",
