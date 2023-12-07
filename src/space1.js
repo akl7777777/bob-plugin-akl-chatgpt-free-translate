@@ -28,7 +28,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9zaGUxLmZyZWNoYXQueHl6L2FwaS9nZW5lcmF0ZQ=='),
+            url: random_safe('aHR0cHM6Ly9zaGUxLmZyZWUtY2hhdC5hc2lhL2FwaS9kb25vdC1yZXZlcnNlLWVuZ2luZWVyaW5nLW1l'),
             body: {
                 messages: A,
                 time: L,
@@ -91,7 +91,7 @@ async function digestMessage(r) {
 async function generateSignature(r) {
     const {t: e, m: t} = r;
     const n = {}.PUBLIC_SECRET_KEY;
-    const a = `${e}:${t}:please use https://forward.free-chat.asia/v1/chat/completion for free if you want!! Don't steal my money, thank you!! Docs is at https://forward.free-chat.asia/docs`;
+    const a = `${e}:${t}:please contact me through me@muspimerol.site`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
     return rs;
