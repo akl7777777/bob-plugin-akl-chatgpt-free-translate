@@ -16,6 +16,7 @@ var gamma = require('./gamma.js');
 var delta = require('./delta.js');
 var of = require('./of.js');
 var customKeyStream = require('./customKeyStream.js')
+var freeShellGPT = require('./freeShellGPT.js')
 var file = require("./file");
 const {readFile} = require("./file");
 // var { historyFileName, readFile, writeFile } = require("./file");
@@ -90,6 +91,8 @@ function translate(query, completion) {
                     chatResult = await aifree.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'oversea-1') {
                     chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'freeShellGPT') {
+                    chatResult = await freeShellGPT.translate(query, source_lang, target_lang, translate_text, completion)
                 } else {
                     // chatResult = await dw.translate(query, source_lang, target_lang, translate_text, completion)
                     chatResult = await customKeyStream.translate(query, source_lang, target_lang, translate_text, completion)
