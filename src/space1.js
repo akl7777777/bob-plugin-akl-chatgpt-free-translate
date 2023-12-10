@@ -28,7 +28,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly8zdi5mcmVlLWNoYXQuYXNpYS9hcGkvZ2VuZXJhdGU='),
+            url: random_safe('aHR0cHM6Ly9zaGUxLmZyZWUtY2hhdC5hc2lhL2FwaS9kb25vdC1yZXZlcnNlLWVuZ2luZWVyaW5nLW1l'),
             body: {
                 messages: A,
                 time: L,
@@ -40,7 +40,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             },
             header: {
                 'Content-Type': 'application/json',
-                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36'
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'
             }
         });
         if (resp.data) {
@@ -91,7 +91,7 @@ async function digestMessage(r) {
 async function generateSignature(r) {
     const {t: e, m: t} = r;
     const n = {}.PUBLIC_SECRET_KEY;
-    const a = `${e}:${t}:${n}`;
+    const a = `${e}:${t}:please contact me through me@muspimerol.site`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
     return rs;
