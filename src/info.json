@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "2.1.3",
+  "version": "2.1.5",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -118,6 +118,14 @@
         {
           "title": "gpt-3.5-turbo-16k-0613",
           "value": "gpt-3.5-turbo-16k-0613"
+        },
+        {
+          "title": "gemini-pro",
+          "value": "gemini-pro"
+        },
+        {
+          "title": "gemini-pro-vision",
+          "value": "gemini-pro-vision"
         }
       ],
       "desc": "版本切换(默认正式版无特殊情况不用修改)"
