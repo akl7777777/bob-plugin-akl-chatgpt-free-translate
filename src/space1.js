@@ -28,7 +28,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         const resp = await $http.request({
             method: "POST",
-            url: random_safe('aHR0cHM6Ly9zaGUxLmZyZWUtY2hhdC5hc2lhL2FwaS9kb25vdC1yZXZlcnNlLWVuZ2luZWVyaW5nLW1l'),
+            url: random_safe('aHR0cHM6Ly9lNi5mcmVjaGF0Lnh5ei9hcGkvZ2VuZXJhdGU='),
             body: {
                 messages: A,
                 time: L,
@@ -91,7 +91,7 @@ async function digestMessage(r) {
 async function generateSignature(r) {
     const {t: e, m: t} = r;
     const n = {}.PUBLIC_SECRET_KEY;
-    const a = `${e}:${t}:please contact me through me@muspimerol.site`;
+    const a = `${e}:${t}:Please don't do reverse engineering on my API, I know it is easy but this is a non-profit site, so don't be evil please! If you wan't to serve other people, contact me at me@muspimerol.site and I can give you free API service if possible. Thank you! Again, If you wan't to serve other people, contact me at me@muspimerol.site and I can give you free API service if possible. Thank you! Again, If you wan't to serve other people, contact me at me@muspimerol.site and I can give you free API service if possible. Thank you! If I missed your email, I'm sorry about that, and you can contact me at kilo.meter@foxmail.com instead, if you want. Thank you!`;
     const rs = await digestMessage(a);
     $log.error('==========' + rs)
     return rs;
