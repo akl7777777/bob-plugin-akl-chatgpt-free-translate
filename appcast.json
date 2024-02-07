@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.1.8",
+      "desc": "fix: 优化正式版不填入卡密的bug",
+      "sha256": "c97338ed7eb054ff33da09993f161a035542fd4d878e2ece63703b32c84dd7f2",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.1.8/bob-plugin-akl-chatgpt-free-translate_v2.1.8.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "2.1.7",
       "desc": "feat: 新增正式版默认接口",
       "sha256": "86313b22baea5ed94c1322b41342cbbbe075638333df97f3a2f95da541699a20",
