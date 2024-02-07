@@ -32,15 +32,18 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         let targetText = ""; // 初始化拼接结果变量
         let buffer = ""; // 新增 buffer 变量
+        let headers = {
+            "Content-Type": "application/json"
+        }
+        if (api_key) {
+            headers["Authorization"] = `Bearer ${api_key}`;
+            headers["Token"] = `${api_key}`;
+        }
         (async () => {
             await $http.streamRequest({
                 method: "POST",
                 url: url,
-                header: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${api_key}`,
-                    "Token": `${api_key}`
-                },
+                header: headers,
                 body: {
                     model: model,
                     stream: true,
