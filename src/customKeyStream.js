@@ -1,4 +1,4 @@
-const {readFile,historyFileName} = require("./file");
+const {readFile, historyFileName} = require("./file");
 const file = require("./file");
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
@@ -7,6 +7,9 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         let api_key = $option.api_key;
         let model = $option.model;
         let url = $option.url;
+        if (!url) {
+            url = 'https://chat-a.shellgpt.top/api/openai/v1/chat/completions'
+        }
         let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {
@@ -33,12 +36,12 @@ async function translate(query, source_lang, target_lang, translate_text, comple
             await $http.streamRequest({
                 method: "POST",
                 url: url,
-                header:{
+                header: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${api_key}`,
                     "Token": `${api_key}`
                 },
-                body:{
+                body: {
                     model: model,
                     stream: true,
                     temperature: 0.2,
@@ -119,7 +122,7 @@ function handleResponse(query, isChatGPTModel, targetText, textFromResponse) {
     if (textFromResponse !== '[DONE]') {
         try {
             const dataObj = JSON.parse(textFromResponse);
-            const { choices } = dataObj;
+            const {choices} = dataObj;
             if (!choices || choices.length === 0) {
                 query.onCompletion({
                     error: {
@@ -156,7 +159,7 @@ function handleResponse(query, isChatGPTModel, targetText, textFromResponse) {
 }
 
 function handleError(query, result) {
-    const { statusCode } = result.response;
+    const {statusCode} = result.response;
     const reason = (statusCode >= 400 && statusCode < 500) ? "param" : "api";
     query.onCompletion({
         error: {
