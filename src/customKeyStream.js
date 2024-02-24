@@ -8,7 +8,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         let model = $option.model;
         let url = $option.url;
         if (!url) {
-            url = 'https://chat-a.shellgpt.top/api/openai/v1/chat/completions'
+            url = 'http://15.152.16.87:3000/api/openai/v1/chat/completions'
         }
         let prompt = $option.prompt;
         const configValue = readFile();
