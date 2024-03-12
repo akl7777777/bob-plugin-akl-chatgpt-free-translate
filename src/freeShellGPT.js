@@ -34,7 +34,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
                 url: url,
                 header:{
                     "Content-Type": "application/json",
-                    "Authorization": `Bearer sk-GTBL94nGR4BIesKwA9C678F956234097BdA5005aFd936b7f`
+                    "Authorization": `Bearer sk-Ugg2uAELjNBC6lWk865064B9693b45Fb90D7D71d4647C17c`
                 },
                 body:{
                     model: model,
