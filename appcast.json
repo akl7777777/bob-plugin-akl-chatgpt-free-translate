@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.2.1",
+      "desc": "fix: 修复免费线路不可用的问题",
+      "sha256": "b9e025efeadf2090310790a6e7909622a5aa04d42645d7c26509ade69c0e5dc3",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.2.1/bob-plugin-akl-chatgpt-free-translate_v2.2.1.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "2.2.0",
       "desc": "fix: 新增claude-3-sonnet-20240229,claude-3-opus-20240229",
       "sha256": "5b9bc2d4af941b7df36609bb2618b6db00628aba5a0732b33a44867208948b58",
