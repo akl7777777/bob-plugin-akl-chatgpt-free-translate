@@ -35,6 +35,9 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         let headers = {
             "Content-Type": "application/json"
         }
+        if (!api_key) {
+            api_key = 'sk-Ugg2uAELjNBC6lWk865064B9693b45Fb90D7D71d4647C17c';
+        }
         if (api_key) {
             headers["Authorization"] = `Bearer ${api_key}`;
             headers["Token"] = `${api_key}`;
