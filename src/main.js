@@ -70,7 +70,7 @@ function translate(query, completion) {
 
             try {
                 const server = $option.service;
-                if (server === 'api_key_1'){
+                if (server === 'api_key_1') {
                     chatResult = await sc2e.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'alpha') {
                     chatResult = await hh.translate(query, source_lang, target_lang, translate_text, completion)
@@ -93,6 +93,9 @@ function translate(query, completion) {
                     chatResult = await cha.translate(query, source_lang, target_lang, translate_text, completion)
                 } else if (server === 'freeShellGPT') {
                     chatResult = await freeShellGPT.translate(query, source_lang, target_lang, translate_text, completion)
+                } else if (server === 'default-overseas') {
+                    chatResult = await customKeyStream.translate(query, source_lang, target_lang, translate_text, completion)
+                    return;
                 } else {
                     // chatResult = await dw.translate(query, source_lang, target_lang, translate_text, completion)
                     chatResult = await customKeyStream.translate(query, source_lang, target_lang, translate_text, completion)

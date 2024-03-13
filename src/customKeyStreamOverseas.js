@@ -1,11 +1,15 @@
-const {readFile,historyFileName} = require("./file");
+const {readFile, historyFileName} = require("./file");
 const file = require("./file");
 
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
+        let api_key = $option.api_key;
         let model = $option.model;
-        let url = "https://qbilpgbmqtcz.cloud.sealos.io/v1/chat/completions";
+        let url = $option.url;
+        if (!url) {
+            url = 'https://chat-c.shellgpt.top/api/openai/v1/chat/completions'
+        }
         let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {
@@ -28,15 +32,19 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         const L = Date.now();
         let targetText = ""; // 初始化拼接结果变量
         let buffer = ""; // 新增 buffer 变量
+        let headers = {
+            "Content-Type": "application/json"
+        }
+        if (api_key) {
+            headers["Authorization"] = `Bearer ${api_key}`;
+            headers["Token"] = `${api_key}`;
+        }
         (async () => {
             await $http.streamRequest({
                 method: "POST",
                 url: url,
-                header:{
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer sk-Ugg2uAELjNBC6lWk865064B9693b45Fb90D7D71d4647C17c`
-                },
-                body:{
+                header: headers,
+                body: {
                     model: model,
                     stream: true,
                     temperature: 0.2,
@@ -117,7 +125,7 @@ function handleResponse(query, isChatGPTModel, targetText, textFromResponse) {
     if (textFromResponse !== '[DONE]') {
         try {
             const dataObj = JSON.parse(textFromResponse);
-            const { choices } = dataObj;
+            const {choices} = dataObj;
             if (!choices || choices.length === 0) {
                 query.onCompletion({
                     error: {
@@ -154,7 +162,7 @@ function handleResponse(query, isChatGPTModel, targetText, textFromResponse) {
 }
 
 function handleError(query, result) {
-    const { statusCode } = result.response;
+    const {statusCode} = result.response;
     const reason = (statusCode >= 400 && statusCode < 500) ? "param" : "api";
     query.onCompletion({
         error: {
