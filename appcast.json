@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.2.3",
+      "desc": "fix: 新增海外线路 正式版(海外备用)",
+      "sha256": "cc16449bef5404b749ee46d54bebcb262d0b135c78847356e84a0476e0920637",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.2.3/bob-plugin-akl-chatgpt-free-translate_v2.2.3.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "2.2.2",
       "desc": "fix: 修复免费线路不可用的问题",
       "sha256": "b359c4ef9cd4a40d27224a97d752a82694e8906dd1058d6c4c7698d3d634d127",
