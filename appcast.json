@@ -2,6 +2,13 @@
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
   "versions": [
     {
+      "version": "2.2.5",
+      "desc": "fix: 新增自定义模型名的输入框",
+      "sha256": "0be0f4dcee172bd61e4aacac2f977fccea3080b9ee0d50c05c88f95b0872110a",
+      "url": "https://github.com/akl7777777/bob-plugin-akl-chatgpt-free-translate/releases/download/v2.2.5/bob-plugin-akl-chatgpt-free-translate_v2.2.5.bobplugin",
+      "minBobVersion": "0.5.0"
+    },
+    {
       "version": "2.2.3",
       "desc": "fix: 新增海外线路 正式版(海外备用)",
       "sha256": "cc16449bef5404b749ee46d54bebcb262d0b135c78847356e84a0476e0920637",
