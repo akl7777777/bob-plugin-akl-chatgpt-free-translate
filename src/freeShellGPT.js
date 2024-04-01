@@ -4,7 +4,7 @@ const file = require("./file");
 async function translate(query, source_lang, target_lang, translate_text, completion) {
     try {
         let mode = $option.mode;
-        let model = $option.model;
+        let model = $option.custom_model || $option.model;
         let url = "https://qbilpgbmqtcz.cloud.sealos.io/v1/chat/completions";
         let prompt = $option.prompt;
         const configValue = readFile();

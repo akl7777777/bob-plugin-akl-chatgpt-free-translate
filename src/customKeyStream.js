@@ -5,7 +5,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
     try {
         let mode = $option.mode;
         let api_key = $option.api_key;
-        let model = $option.model;
+        let model = $option.custom_model || $option.model;
         let url = $option.url;
         if (!url) {
             url = 'http://15.152.16.87:3000/api/openai/v1/chat/completions'

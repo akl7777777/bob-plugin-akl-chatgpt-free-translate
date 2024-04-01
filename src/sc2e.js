@@ -9,7 +9,7 @@ async function translate(query, source_lang, target_lang, translate_text, comple
         let api_key = $option.api_key;
         let url = $option.url;
         let mode = $option.mode;
-        let model = $option.model;
+        let model = $option.custom_model || $option.model;
         let prompt = $option.prompt;
         const configValue = readFile();
         if (configValue.mode) {

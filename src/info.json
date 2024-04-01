@@ -1,6 +1,6 @@
 {
   "identifier": "com.akl.bob-plugin-akl-chatgpt-free-translate",
-  "version": "2.2.3",
+  "version": "2.2.5",
   "category": "translate",
   "name": "Free ChatGPT",
   "summary": "免秘钥免启动任何服务调用ChatGPT",
@@ -137,6 +137,13 @@
         }
       ],
       "desc": "版本切换(默认正式版无特殊情况不用修改)"
+    },
+    {
+      "identifier": "custom_model",
+      "type": "text",
+      "defaultValue": "",
+      "title": "自定义模型名",
+      "desc": "自定义模型名"
     },
     {
       "identifier": "service",
