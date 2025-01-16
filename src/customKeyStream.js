@@ -125,41 +125,42 @@ async function translate(query, source_lang, target_lang, translate_text, comple
 
 
 function handleResponse(query, isChatGPTModel, targetText, textFromResponse) {
-    if (textFromResponse !== '[DONE]') {
-        try {
-            const dataObj = JSON.parse(textFromResponse);
-            const {choices} = dataObj;
-            if (!choices || choices.length === 0) {
-                query.onCompletion({
-                    error: {
-                        type: "api",
-                        message: "接口未返回结果",
-                        addtion: textFromResponse,
-                    },
-                });
-                return targetText;
-            }
+    if (textFromResponse === '[DONE]') {
+        return targetText;
+    }
 
-            const content = isChatGPTModel ? choices[0].delta.content : choices[0].text;
-            if (content !== undefined) {
-                targetText += content;
-                query.onStream({
-                    result: {
-                        from: query.detectFrom,
-                        to: query.detectTo,
-                        toParagraphs: [targetText],
-                    },
-                });
-            }
-        } catch (err) {
-            query.onCompletion({
-                error: {
-                    type: err._type || "param",
-                    message: err._message || "Failed to parse JSON",
-                    addtion: err._addition,
+    try {
+        const dataObj = JSON.parse(textFromResponse);
+
+        // 如果消息中包含 usage 信息，说明是最后的统计信息，直接返回
+        if (dataObj.usage) {
+            return targetText;
+        }
+
+        const {choices} = dataObj;
+        if (!choices || choices.length === 0) {
+            return targetText;  // 直接返回现有的文本，不触发错误
+        }
+
+        const content = isChatGPTModel ? choices[0].delta.content : choices[0].text;
+        if (content !== undefined) {
+            targetText += content;
+            query.onStream({
+                result: {
+                    from: query.detectFrom,
+                    to: query.detectTo,
+                    toParagraphs: [targetText],
                 },
             });
         }
+    } catch (err) {
+        query.onCompletion({
+            error: {
+                type: err._type || "param",
+                message: err._message || "Failed to parse JSON",
+                addtion: err._addition,
+            },
+        });
     }
     return targetText;
 }
